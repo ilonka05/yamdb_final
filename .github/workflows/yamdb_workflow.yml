@@ -43,8 +43,8 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: ilonka05/api_yamdb:latest
-
+          tags: ilonka05/yamdb:latest
+#
   #deploy:
   #  runs-on: ubuntu-latest
   #  needs: build_and_push_to_docker_hub

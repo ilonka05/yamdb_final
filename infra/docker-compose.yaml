@@ -8,8 +8,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: ilonka05/api_yamdb:latest
-    build: ../api_yamdb
+    image: ilonka05/yamdb:latest
     restart: always
     volumes:
       - static_value:/app/static/
