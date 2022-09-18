@@ -2,6 +2,11 @@
 ![example workflow](https://github.com/ilonka05/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
 
+### Ссылка на развёрнутый проект:
+
+http://51.250.81.113/admin/
+
+
 ### Цель проекта:
 
 Проект YaMDb собирает отзывы пользователей на произведения.
