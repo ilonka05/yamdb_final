@@ -2,9 +2,9 @@ FROM python:3.7-slim
 
 LABEL author='ilonka05' version=1
 
-WORKDIR /app/api_yamdb
+WORKDIR /app
 
-COPY . .
+COPY ./ .
 
 RUN pip3 install -r requirements.txt --no-cache-dir
 
