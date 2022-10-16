@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 LABEL author='ilonka05' version=1
 
-WORKDIR /app/api_yamdb
+WORKDIR /app
 
 COPY . .
 

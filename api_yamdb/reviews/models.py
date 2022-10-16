@@ -65,7 +65,7 @@ class Title(models.Model):
     class Meta:
         constraints = (
             CheckConstraint(
-                check=(Q(year__lte=date.today().year)),
+                check=(Q(year__lte=date.today().year)), 
                 name='year__less__today'
             ),
         )
@@ -73,8 +73,8 @@ class Title(models.Model):
             models.Index(fields=('year',))
         ]
 
-    def __str__(self):
-        return self.name[:15]
+    #def __str__(self):
+    #    return self.name[:15]
 
 
 class TitleGenre(models.Model):
@@ -166,3 +166,6 @@ class Comment(models.Model):
         ordering = ('-pub_date',)
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'
+
+    def __str__(self):
+        return self.text
