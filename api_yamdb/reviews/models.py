@@ -65,7 +65,7 @@ class Title(models.Model):
     class Meta:
         constraints = (
             CheckConstraint(
-                check=(Q(year__lte=date.today().year)), 
+                check=(Q(year__lte=date.today().year)),
                 name='year__less__today'
             ),
         )
