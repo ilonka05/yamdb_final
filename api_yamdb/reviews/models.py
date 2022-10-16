@@ -73,9 +73,6 @@ class Title(models.Model):
             models.Index(fields=('year',))
         ]
 
-    #def __str__(self):
-    #    return self.name[:15]
-
 
 class TitleGenre(models.Model):
     title_id = models.ForeignKey(
