@@ -42,7 +42,7 @@ class Category(models.Model):
 
 
 class Title(models.Model):
-    name = models.TextField('Название произведения')
+    name = models.TextField('Название произведенияяяя')
     year = models.SmallIntegerField('Год выхода')
     description = models.TextField(
         'Описание произведения',
@@ -72,6 +72,9 @@ class Title(models.Model):
         indexes = [
             models.Index(fields=('year',))
         ]
+
+    def __str__(self):
+        return self.name
 
 
 class TitleGenre(models.Model):
