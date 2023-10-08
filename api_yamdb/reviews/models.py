@@ -42,7 +42,7 @@ class Category(models.Model):
 
 
 class Title(models.Model):
-    name = models.TextField('Название произведенияяяя')
+    name = models.TextField('Название произведения')
     year = models.SmallIntegerField('Год выхода')
     description = models.TextField(
         'Описание произведения',
