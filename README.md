@@ -1,40 +1,66 @@
+## Проект сбора отзывов пользователей на произведения
+
+
 ### Статус workflow:
 ![example workflow](https://github.com/ilonka05/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
+---
 
 ### Ссылка на развёрнутый проект:
 
 http://51.250.81.113/admin/
 
+### Если сервер недоступен, можно запустить проект локально по ссылке:
 
-### Цель проекта:
+http://localhost/admin/
+
+---
+
+### Описание проекта:
 
 Проект YaMDb собирает отзывы пользователей на произведения.
 Произведения делятся на категории: «Книги», «Фильмы», «Музыка».
 Список категорий может быть расширен администратором.
 
+---
 
-### Шаблон наполнения env-файла:
+### Используемые технологии и библиотеки:
+* [Python](https://www.python.org/)
+* [Django](https://pypi.org/project/Django/)
+* [Django REST framework](https://pypi.org/project/djangorestframework/)
+* [requests](https://pypi.org/project/requests/)
 
-```
-DB_ENGINE=django.db.backends.postgresql
-DB_NAME=postgres
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-DB_HOST=db
-DB_PORT=5432
-```
+---
 
 ### Как запустить проект:
 
-- Клонируйте репозиторий и перейдите в него
+- Клонируйте репозиторий на локальную машину
 
 ```
 git clone https://github.com/ilonka05/yamdb_final.git
 ```
 
+- Перейдите в папку с проектом
+
+```
+cd yamdb_final
+```
+
+- Перейдите в папку infra
+
 ```
 cd infra
+```
+
+- В данной папке проекта создайте файл '.env'. Пример содержания файла:
+
+```
+DB_ENGINE="django.db.backends.postgresql"
+DB_NAME="postgres"
+POSTGRES_USER="postgres"
+POSTGRES_PASSWORD="postgres"
+DB_HOST="db"
+DB_PORT="5432"
 ```
 
 - Выполните сборку контейнеров
@@ -43,7 +69,7 @@ cd infra
 docker-compose up -d --build
 ```
 
-- Выполните миграцию БД и сборку статики
+- Выполните миграцию БД, создайте суперпользователя и выполните сборку статики
 
 ```
 docker-compose exec web python manage.py migrate
@@ -57,11 +83,13 @@ docker-compose exec web python manage.py collectstatic --no-input
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
-- Также можно выполнить резервную копию базы
+- Также, при необходимости, можно выполнить резервную копию БД
 
 ```
 docker-compose exec web python manage.py dumpdata > fixtures.json 
 ```
+
+---
 
 - Авторы проекта:
 
