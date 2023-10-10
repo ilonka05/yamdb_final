@@ -77,15 +77,10 @@ docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
 
-- Выполните команду по наполнению БД из файла фикстур
+- При необходимости выполните команду по наполнению БД из файла фикстур. Также можно выполнить резервную копию БД.
 
 ```
 docker-compose exec web python manage.py loaddata fixtures.json
-```
-
-- Также, при необходимости, можно выполнить резервную копию БД
-
-```
 docker-compose exec web python manage.py dumpdata > fixtures.json 
 ```
 
